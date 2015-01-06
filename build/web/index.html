@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pagina principal</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilos.css"/>
+        <script>
+            function validar(formulario){
+                var numero1 = formulario.numero1.value;
+                var numero2 = formulario.numero2.value;
+                if(isNaN(numero1) || isNaN(numero2) || numero1 == "" || numero2 == ""){
+                    alert("Introduce los numeros porfavor.");
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    </head>
+    <body>
+        <form name="formulario" id="calculadora" action="peticion" method="post" onsubmit="return validar(this);">
+            <input type="text" name="numero1" placeholder="Introduce un número" />
+            <input type="text" name="numero2" placeholder="Introduce otro número" /><br/><br/>
+            <input type="submit" name="suma" value="Sumar" />
+            <input type="submit" name="resta" value="Restar" />
+            <input type="submit" name="division" value="Dividir" />
+            <input type="submit" name="multiplicacion" value="Multiplicar" />
+        </form>
+    </body>
+</html>
